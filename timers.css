@@ -1,0 +1,239 @@
+/* Primary Document Rules */
+* {
+	box-sizing: border-box;
+}
+body { 
+	background-color: white;
+	color: black;
+	font-family: "Book Antiqua", serif;
+	font-size: large; 
+	margin: 0px;
+	padding: 0px;
+}
+h2 {
+	font-size: 120%;
+	font-weight: bold;
+}
+#allbodycontent {
+	width: auto;
+	margin-left: auto;
+	margin-right: auto;
+}
+/* Header Area */	
+#header {
+	height: 125px;
+	background-color: #94B5C0;
+	font-size: 175%;
+	text-shadow: 1px 1px 2px white, 0px 0px 2px white;
+	padding-left: 15px;
+	padding-top: 1px;
+	text-align: center;
+}
+.first_word, .remaining_words {
+	display: inline-block;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 150%;
+	font-weight: bold;
+	padding-top: 25px;
+}
+.first_word {
+	animation: showup 7s infinite;
+}
+.remaining_words {
+	width: 0px;
+	animation: reveal 7s infinite;
+}
+.remaining_words span {
+	margin-left: -355px;
+	animation: slidein 7s infinite;
+}
+@keyframes showup {
+	0% {opacity: 0;}
+	20% {opacity: 1;}
+	80% {opacity: 1;}
+	100% {opacity: 0;}
+}
+@keyframes slidein {
+	0% {margin-left: -800px;}
+	20% {margin-left: -800px;}
+	35% {margin-left: 0px;}
+	100% {margin-left: 0px;}
+}
+@keyframes reveal {
+	0% {opacity: 0; width: 0px;}
+	20% {opacity: 1; width: 0px;}
+	30% {width: auto;}
+	80% {opacity: 1}
+	100% {opacity: 0; width: auto;}
+}
+/* sidebar image */
+#left_sidebar {
+   	width: 40%;
+	float: left;
+   	padding-top: 0px;
+}
+#left_sidebar img {
+	width: 100%;
+	height: auto;
+}
+/* Main Body Area */
+#top_grid {
+	width: 60%;
+	float: left;
+	height: auto;
+	min-height: 200px;
+	text-align: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-bottom: 1px solid black;
+}
+#bottom_grid {
+	width: 60%;
+	float: left;
+	height: auto;
+	min-height: 200px;
+	text-align: center;
+	padding: 10px 20px;
+}
+#timerTitle {
+	font-size: 175%;
+	font-weight: bold;
+	padding-top: 20px;
+}
+#timerDisplay {
+	font-size: 400%;
+	font-weight: bold;
+}
+#doneMessage {
+	font-size: 200%;
+	font-weight: bold;
+	vertical-align: middle;
+}
+#timeLabel {
+	font-size: 130%;
+	margin-left: 5%;
+}
+/* Form selectors and rules */
+table {
+	margin-left: auto;
+	margin-right: auto;
+}
+tr {
+	margin-bottom: 15px;
+}
+td {
+	height: 40px;
+}
+.label_col {
+   	text-align: right;
+   	font-weight: bold;
+   	padding: 5px;	
+}
+.input_col {
+	text-align: left;
+	padding-left: 10px;
+}
+#small_row {
+	height: 20px;
+	text-align: left;
+}
+#stopwatch, #countdown, #stopMusic  {
+	background-color: #94B5C0;
+	border: 1px solid black;
+	border-radius: 3px;
+	text-align: center;
+	padding: 7px 14px;
+	font-weight: bold;
+	cursor: pointer;
+}
+.hidden {
+	display: none;
+}
+#userMin, #userSec, #userMilSec {
+	width: 50px;
+	height: 40px;
+	font-size: 105%;
+	border: 1px solid black;
+	border-radius: 3px;
+	text-align: center;
+}
+#submitButton {
+	background-color: lightgrey;
+	border: 1px solid black;
+	border-radius: 3px;
+	padding: 7px 12px;
+	font-weight: bold;
+	cursor: pointer;
+}
+#validateMessage {
+	color: red;
+	padding-left: 10px;
+	padding-right: 20px;
+}
+#startWatch, #startCount, #stopWatch, #on_offCount, #resetButton {
+	background-color: lightgrey;
+	border: 1px solid black;
+	border-radius: 3px;
+	padding: 7px 12px;
+	font-weight: bold;
+	cursor: pointer;
+}
+/* Footer Area */
+#footer {
+	background-color: #888888;
+	color: white;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	height: 50px;
+	clear: left;
+}
+/*responsive layout*/
+@media (max-width: 975px) {
+	#header {
+		font-size: 150%;
+		height: 100px;
+	}
+	#timerDisplay, #doneMessage {
+		font-size: 250%;
+	}
+	#top_grid {
+		border-bottom: none;
+		padding-left: 10px;
+	}
+	#bottom_grid {
+		border-top: 1px solid black;
+		width: 100%;
+	}
+}
+@media (max-width: 700px) {
+	body {
+		font-size: medium;
+	}
+	#header {
+		font-size: 115%;
+		height: 90px;
+	}
+	#left_sidebar, #top_grid {
+		width: 100%;
+	}
+	#left_sidebar {
+		float: none;
+		display: inline-block;
+		text-align: center;
+		background-color: #94B5C0;
+		padding-bottom: 20px;
+		border-bottom: 1px solid black;
+	}
+	#left_sidebar img {
+		width: 55%;
+		height: auto;
+		border: 1px solid white;
+	}
+	#userMin, #userSec, #userMilSec {
+		width: 40px;
+		height: 30px;
+		font-size: 100%;
+	}
+}
