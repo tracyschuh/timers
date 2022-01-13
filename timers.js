@@ -1,5 +1,3 @@
-// adding to JS file shows errors in editor; ts= typeScript (enable by putting on it's own line):// @ts-check 
-
 // WINDOW.ONLOAD FUNCTIONS
 window.onload = function() {
     document.getElementById("stopwatch").onclick = function(evt) {
@@ -156,7 +154,7 @@ function validate() { // onclick of submit button, validate user input
     //if countdown used already, clear interval
     clearInterval(count);
     timer_on = 0; 
-    //hide submit button after clicked
+    //hide submit button after submit button clicked
     document.getElementById("submitButton").style.display = 'none';
     document.getElementById("small_row").style.display = 'none';
     // grab user input
@@ -171,18 +169,12 @@ function validate() { // onclick of submit button, validate user input
 
     if (!regexMin.test(minute) || !regexSec.test(second) || !regexMil.test(milli)) { //regex doesn't match = invalid input
         document.getElementById("validateMessage").innerHTML = "<img src=\"./images/redx.png\">&nbsp;Timer number must be in xx:xx:xx format and is limited to a 60:00:00 min max";
-        //enable submit button for next attempt and clear invalid input values
-        document.getElementById("submitButton").style.display = 'inline'; 
-        document.getElementById("userMin").value = ""; 
-        document.getElementById("userSec").value = "";
-        document.getElementById("userMilSec").value = "";
-    } else if ((parseInt(minute) == 60) && ((parseInt(second) > 0) || (parseInt(milli) > 0))) { //test to check for 10:00:00 min max
+        //call function to enable submit button for next attempt and clear invalid input values
+        clearCountdownInput();
+    } else if ((parseInt(minute) == 60) && ((parseInt(second) > 0) || (parseInt(milli) > 0))) { //test to check for 60:00:00 min max
         document.getElementById("validateMessage").innerHTML = "<img src=\"./images/redx.png\">&nbsp;Timer is limited to a 60:00:00 max";
-        //enable submit button for next attempt and clear invalid input values
-        document.getElementById("submitButton").style.display = 'inline'; 
-        document.getElementById("userMin").value = ""; 
-        document.getElementById("userSec").value = "";
-        document.getElementById("userMilSec").value = "";
+       //call function to enable submit button for next attempt and clear invalid input values
+        clearCountdownInput();
     } else  { //input validates so display user time on timer, show buttons and info
         document.getElementById("validateMessage").innerHTML = "<img src=\"./images/greencheck.png\">&nbsp;Your timer is ready!";
         document.getElementById("timerTitle").innerHTML = "Countdown Timer"; 
@@ -192,6 +184,13 @@ function validate() { // onclick of submit button, validate user input
         document.getElementById("on_offCount").style.display = 'inline'; //pause/resume button
     } 
 } //end function validate()
+
+function clearCountdownInput() { //when user input is invalid, enable submit button for next attempt and clear invalid input values
+    document.getElementById("submitButton").style.display = 'inline'; 
+    document.getElementById("userMin").value = ""; 
+    document.getElementById("userSec").value = "";
+    document.getElementById("userMilSec").value = "";
+} //end function clearCountdownInput()
 
 function startCountdown() {
     //if countdown used already, clear interval
@@ -206,7 +205,7 @@ function startCountdown() {
     }
 } // end startCountdown()
 
-function countdown() {
+function countdown() { //runs countdown timer
     if (timer_on = 1) {
         mm = document.getElementById("userMin").value; 
         ss = document.getElementById("userSec").value;
