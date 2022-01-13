@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang= "en">
     <head>
-		<title>Timers</title>
-		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="https://tracyschuh.com/timers/CSS/timers.css">
+	<title>Timers</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="https://tracyschuh.com/timers/CSS/timers.css">
         <script src= "https://tracyschuh.com/timers/js/timers.js"></script>
     </head>
     <body id= "allbodycontent">
@@ -15,7 +16,7 @@
         </div>
         <div id = "top_grid">
             <h2>Time Your Event</h2>
-            <p>Do you need a stopwatch or a countdown timer?</p>
+            	<p>Do you need a stopwatch or a countdown timer?</p>
             <h4>Choose timer style:</h4>
             <form action= "#" method= "post" enctype= "multipart/form-data" name= "timing">
                 <table>
@@ -47,7 +48,7 @@
             </form>
             <span id="validateMessage"></span>
             <br>
-        </div>
+        </div><!--end top grid-->
         <div id="bottom_grid">
             <div id= "timerTitle"></div>
             <p id="timerInfo"></p>
@@ -59,10 +60,12 @@
             <span id= "stopWatch" class="hidden">Stop</span>&nbsp;
             <span id= "on_offCount" class="hidden">Pause / Resume</span>&nbsp;
             <span id= "resetButton" class="hidden">Reset</span>
-            <div><span id="doneMessage" class="hidden">TIME IS UP</span>&nbsp;&nbsp;
-            <span id= "stopMusic" class="hidden">Got it!</span></div>
+            <div>
+		<span id="doneMessage" class="hidden">TIME IS UP</span>&nbsp;&nbsp;
+            	<span id= "stopMusic" class="hidden">Got it!</span>
+	    </div>
             <br><br>
-        </div>
+        </div><!--end bottom grid-->
         <div id= "footer">Timers &copy; 2021</div>
     </body>
 </html>
